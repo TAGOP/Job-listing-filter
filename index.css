@@ -1,6 +1,8 @@
 body{
     margin:0;
     background-color:rgba(240,250,251,255);
+    font-family: 'League Spartan', sans-serif;
+    font: weight 500;
 }
 header{
     background-color: hsl(180, 29%, 50%);
@@ -91,4 +93,7 @@ button{
 .money{
     border-left-color:  hsl(180, 29%, 50%);
     border-left-width: 5px;
+}
+.second{
+    font-weight: 700;
 }

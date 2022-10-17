@@ -77,16 +77,29 @@ jobList.forEach(
                 //a
                     div1a.classList.add("first")
                     //delet the previously appended elements from the parent expept from the first iteration
-                    if(div1a.children[0]!== undefined){div1a.removeChild(div1ap0);div1a.removeChild(div1ap2);div1a.removeChild(div1ap1)}
+                    if(div1a.children.length !== 0){
+                        div1a.removeChild(div1ap0);
+                        if(div1a.contains(div1ap1)){div1ap1.remove()}
+                        if(div1a.contains(div1ap2)){div1ap2.remove()};
+                    }
                     //add the content of the previously created elements
                     div1ap0.innerText=companyName(index)
                     div1ap0.classList.add("comp")
-                    if(jobIsNew(index)){div1ap2.innerText = jobIsNew(index)}
-                    div1ap1.classList.add("fet")
-                    if(jobIsFeatured(index)){div1ap1.innerText= jobIsFeatured(index)}
-                    div1ap2.classList.add("new")
-                    //append the whole into the parent
-                    div1a.append(div1ap0,div1ap2,div1ap1)
+                    div1a.append(div1ap0)
+                    //
+                    if(jobIsNew(index) === "NEW!"){
+                        div1ap1.innerText = jobIsNew(index)
+                        div1a.append(div1ap1)
+                        div1ap1.classList.add("new")
+                    }
+                    //
+                    if(jobIsFeatured(index) === "FEATURED"){
+                        div1ap2.innerText = jobIsFeatured(index)
+                        div1a.append(div1ap2)
+                        div1ap2.classList.add("fet")
+                    }
+                    //append the whole 
+                    
                 //b
                     div1b.classList.add("second")
                     //delet the previously appended elements from the parent expept from the first iteration
@@ -125,4 +138,4 @@ jobList.forEach(
     main.append(section.cloneNode(true))
     }
 )
-console.log(jobIsFeatured(1))
+console.log(div1ap2)

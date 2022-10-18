@@ -5,8 +5,9 @@ body{
     font: weight 500;
 }
 header{
-    background-color: hsl(180, 29%, 50%);
+    position: relative;
     height: auto;
+    z-index:-1;
 }
 main{
     background-color:rgba(240,250,251,255);
@@ -14,15 +15,19 @@ main{
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    padding: 50px;
-
+    padding: 50px 50px 50px 50px;
+    position:relative;
+    
 }
 p{
     display: inline;
 }
 #himg{
-    width:100vw;
+    width:99vw;
     margin: 0;
+    background-color: hsl(180, 29%, 50%);
+    position: relative;
+    z-index:-1;
 }
 section{
     display: flex;
@@ -49,18 +54,21 @@ section{
 .new{
     background-color: hsl(180, 29%, 50%);
     margin-right: 10px;
-    border-radius: 5px;
-    font-size: 11px;
+    border-radius: 9px;
+    font-size: 10px;
     color: white;
     padding:3px;
+    padding:5px 6px 5px 6px ;
+    font-weight: 700 ;
 }
 .fet{
     background-color:black;
     margin-right: 10px;
-    border-radius: 5px;
-    font-size: 11px;
+    border-radius: 9px;
+    font-size: 10px;
     color: white;
-    padding:3px;
+    padding:5px 6px 5px 6px;
+    font-weight: 700 ;
 }
 .third{
     color: gray ;
@@ -81,6 +89,8 @@ button{
     border-radius: 3px;
     padding: 5px;
     box-shadow: 1px 1px 4px  lightgray;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700 ;
 }
 .cimg{
     width:70%;
@@ -96,4 +106,36 @@ button{
 }
 .second{
     font-weight: 700;
+}
+.ban{
+    display: none;
+}
+#house{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 1px 1px 10px  lightgray;
+    background-color: white ;
+    border-radius: 7px;
+    width:55.5%;
+    padding: 6px 17px;
+    margin:auto;
+    position:relative;
+    bottom: 35px;
+    z-index: 10;
+}
+.room{
+    display:flex;
+    justify-content: left;
+    z-index: 10;
+}
+#clear{
+    margin-right: 10px;
+    color: hsl(180, 29%, 50%);
+    font-weight: 700;
+    text-decoration:underline;
+    z-index: 10;
+
+}
+.main-changes{
+    padding-top: 0;
 }

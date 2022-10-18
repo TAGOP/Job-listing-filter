@@ -38,7 +38,7 @@ import { jobList } from "./data/code/data.js"
     }
     //Part4:requirements
     function jobRequirements(jobNum){
-        return jobList[jobNum].languages.concat(jobList[jobNum].tools)
+        return [jobList[jobNum].role].concat([jobList[jobNum].level],jobList[jobNum].languages,jobList[jobNum].tools)
     }
 //Creat/Select all the needed html elements
 const main = document.querySelector("main")
@@ -138,4 +138,30 @@ jobList.forEach(
     main.append(section.cloneNode(true))
     }
 )
-console.log(div1ap2)
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+const selectors = document.querySelectorAll("button")
+const home = document.querySelector("header div")
+let sels = [];
+selectors.forEach((button,index)=>{
+    button.addEventListener("click",function(e){
+        const notyou = Array.from(document.querySelectorAll("section")).filter((job,ind) => { 
+            let only = e.target.innerText
+            let victims = Array.from(Array.from(job.children[1].children).map((a,b)=>{return a.innerText}))
+            let bo = victims.every((a,b)=>{return a !== only})
+            return bo
+        })
+        notyou.forEach((no,ind)=>{
+            no.classList.add("ban")
+        })
+        home.setAttribute("id","house")
+        main.classList.add("main-changes")
+        if(sels.every((a,b)=>{return a.innerText !== e.target.innerText})){ 
+            sels.push(e.target)
+            console.log(a.innerText,e.target.innerText)
+        }
+        //
+        sels.forEach((a,b)=>{
+            home.children[0].append(a.cloneNode(true))
+        })
+    })
+})

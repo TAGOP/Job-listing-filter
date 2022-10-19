@@ -139,9 +139,10 @@ jobList.forEach(
     }
 )
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const selectors = document.querySelectorAll("button")
-const home = document.querySelector("header div")
+const selectors = document.querySelectorAll("section button")
+const home = document.querySelector("body > div")
 let sels = [];
+let notyo = []
 selectors.forEach((button,index)=>{
     button.addEventListener("click",function(e){
         const notyou = Array.from(document.querySelectorAll("section")).filter((job,ind) => { 
@@ -150,18 +151,37 @@ selectors.forEach((button,index)=>{
             let bo = victims.every((a,b)=>{return a !== only})
             return bo
         })
+        notyo = notyo
         notyou.forEach((no,ind)=>{
             no.classList.add("ban")
         })
         home.setAttribute("id","house")
         main.classList.add("main-changes")
-        if(sels.every((a,b)=>{return a.innerText !== e.target.innerText})){ 
-            sels.push(e.target)
-            console.log(a.innerText,e.target.innerText)
+        if(sels.every((a)=>{return a !== e.target.innerText}) || sels.length === 0){ 
+            sels=[]
+            sels.push(e.target.innerText)
+            Array.from(sels).forEach((ab,b)=>{
+                button.innerText = ab
+                home.children[0].append(button.cloneNode(true))
+                
+            })
         }
+        console.log(main.children.length)
         //
-        sels.forEach((a,b)=>{
-            home.children[0].append(a.cloneNode(true))
-        })
     })
+})
+const clear = document.querySelector("#clear")
+clear.addEventListener("click",function(){
+    const no = document.querySelectorAll("section.ban")
+    no.forEach((a)=>{
+        a.classList.remove("ban")
+    })
+    Array.from(home.children[0].children).forEach((a)=>{
+        a.remove()
+    })
+    sels = []
+    home.removeAttribute("id","house")
+    main.style.paddingTop = "30px"
+    console.log(sels)
+    console.log(home.children[0].children)
 })

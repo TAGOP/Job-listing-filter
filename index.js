@@ -240,7 +240,7 @@ function cleart1(){
     })
     sels = []
     home.removeAttribute("id","house")
-    main.style.paddingTop = "30px"
+    main.style.paddingTop="50px"
     }
 selectors.forEach((button,index)=>{
     button.addEventListener("click",function(e){
@@ -317,6 +317,7 @@ selectors.forEach((button,index)=>{
         //
     }
     filter()
+    main.style.paddingTop = "50px"
     })
 })
 function cleart(){ 
@@ -330,7 +331,7 @@ function cleart(){
     onlys = []
     sels = []
     home.removeAttribute("id","house")
-    main.style.paddingTop = "30px"
+    main.style.paddingTop="50px"
     }
 const clear = document.querySelector("#clear")
 clear.addEventListener("click",function(){

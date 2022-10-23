@@ -21,6 +21,7 @@ main{
 }
 p{
     display: inline;
+    white-space: nowrap;
 }
 #himg{
     width:99vw;
@@ -34,25 +35,28 @@ section{
     justify-content: space-between;
     width: 60%;
     box-shadow: 1px 1px 10px  lightgray;
-    border-radius: 7px;
+    border-radius: 5px;
     padding: 17px;
+    gap: 20px;
+    background-color: white;
 }
 .part1{
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 .div1{
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap:10px;
+    
 }
 .comp{
     margin-right: 20px;
     color: hsl(180, 29%, 50%);
 }
 .new{
-    background-color: hsl(180, 29%, 50%);
+    background-color:hsl(180, 29%, 50%) ;
     margin-right: 10px;
     border-radius: 9px;
     font-size: 10px;
@@ -79,7 +83,7 @@ section{
     display:flex;
     align-items:center;
     gap:20px;
-    padding-right: 30px;
+    justify-content: right;
     flex-wrap: wrap;
 }
 button{
@@ -93,7 +97,8 @@ button{
     font-weight: 700 ;
 }
 .cimg{
-    width:70%;
+    min-width: 40px;
+    width: 57px;
 }
 .div0{
     display: flex;
@@ -117,17 +122,23 @@ button{
     background-color: white ;
     border-radius: 7px;
     width:55.5%;
-    padding: 6px 17px;
+    padding: 17px 17px;
     margin:auto;
     position:relative;
     bottom: 30px;
     z-index: 10;
-    height:40px;
+    min-height:40px;
+    height: auto;
+    align-items: center;
+    gap: 10px; 
 }
 .room{
     display:flex;
     justify-content: left;
     z-index: 10;
+    flex-wrap:wrap;
+    max-width: 70%;
+    gap:15px;
 }
 #clear{
     margin-right: 10px;
@@ -138,7 +149,82 @@ button{
     width: 70px;
     font-size: 16px;
     padding:5px;
+    height: 40px;
 }
 .main-changes{
     padding-top: 0;
+}
+@media(width<= 1050px){
+    section{
+        width:65%;
+        height: 80px;
+    }
+}
+@media(width<= 900px){
+    section{
+        width:70%;
+    }
+}
+@media(width<= 800px){
+    section{
+        width:90%;
+    }
+    .part1{
+        max-width: 50%;
+    }
+}
+@media(width<= 680px){
+    section{
+        width:90%;
+        flex-direction: column;
+        height: auto;
+        padding-top: 0;
+        margin-bottom: 40px;
+    }
+    .part1{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .div0{
+        position:relative;
+    }
+    .cimg{
+        position:absolute;
+        left: 1px;
+    }
+    .div1{
+        position: relative;
+        bottom: 5px;
+    }
+    .part2{
+        justify-content: flex-start;
+    }
+}
+#noban{
+    display:block;
+    width: 95%;
+    margin:0;
+}
+.featuredBand{
+    border-width:0 0 0 5px ; 
+    border-left-color:hsl(180, 29%, 50%);
+    border-style:solid;
+}
+br{
+    display: none;
+}
+#no{
+    display:block;
+}
+i{
+    background-color: hsl(180, 29%, 50%);
+    color: white;
+    padding: 3px 5px;
+    border-radius: 0 5px 5px 0;
+    position: relative;
+    top: 3px;
+}
+#sbutton{
+    border-radius:  5px 0 0 5px ;
+    box-shadow: none;
 }

@@ -159,7 +159,7 @@ let onlys = [];
 let caca = [];
 //taga
 function filter1(){ 
-    function filter(){ 
+    onlys.forEach(doo => {
         caca = []
         ///////////////////////
         let only;
@@ -168,15 +168,16 @@ function filter1(){
         let ba;
         let count;
         if(onlys.every((a,b)=>{
-            return a !== e.target.innerText
+            return a !== doo
         })){
-            onlys.push(e.target.innerText)
+            onlys.push(doo)
         }
-        //////////////////////////
+        
+
 
             notyouEl = Array.from(document.querySelectorAll("section")).filter((job,ind) => { 
 
-                only = e.target.innerText
+               only = doo
                 victims = Array.from(Array.from(job.children[job.children.length-1].children).map((a,b)=>{return a.innerText}))
                 bo = victims.every((a,b)=>{return a !== only})
                 //test
@@ -208,7 +209,7 @@ function filter1(){
         home.setAttribute("id","house")
         main.classList.add("main-changes")
         if(sels.every((a)=>{return a !== e.target.innerText}) || sels.length === 0){ 
-            sels.push(e.target.innerText)
+            sels.push(doo)
             button.innerText = sels[sels.length-1]
             button.setAttribute("id","sbutton")
             //
@@ -227,8 +228,7 @@ function filter1(){
                 filter1()
             })
         }
-    }
-    filter()
+    })
 }
 function cleart1(){  
     const no = document.querySelectorAll("section.ban")
